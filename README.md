@@ -9,3 +9,9 @@ Send an SMS survey once a product has been delivered to a client. Clients can ra
 - [Python](https://www.python.org/)
 
 
+**Flow from Klaviyo with integrated Analytics**
+- ![Flow](https://user-images.githubusercontent.com/48727972/189538053-99ad77a8-bb80-481f-88fe-8b2d1d62f91b.png)
+
+**Klaviyo API to create a new user and create the event 'Fulfilled Order'**
+- ![Python](https://user-images.githubusercontent.com/48727972/189538238-e5dc5e4b-c9d9-418f-9598-9eadeaf76cc8.png)
+
