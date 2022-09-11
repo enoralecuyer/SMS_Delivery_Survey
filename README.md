@@ -119,10 +119,8 @@ sendToKlaviyo()
 
 #### 7.3 Lack of data
 * Because I was not able to fully test the Flow, I was not able to collect the data from the survey.
- * Once I get the data, what is the next step? How do I want to collect, organize, filter and present the data? (ref: the 5 W)
+ * Once I get the data, what is the next step? How do I want to collect, organize, filter and present the data?
 
 #### 7.4 What are some questions I wish I could have answered with this Project? 
-* Which products have on average the lowest delivery experience rate? Why?
-* Which products have on average the highest delivery experience rate? Why?
-* Which countries have on average the lowest delivery experience rate? Why?
-* Which countries have on average the highest delivery experience rate? Why?
+* Which products have on average the lowest or highest delivery experience rate? Why?
+* Which countries have on average the lowest or highest delivery experience rate? Why?
