@@ -61,33 +61,32 @@ To test that your flow is functional, we are going to create a script in Python 
 #### 6.1 Add a new user and trigger the "Fulfilled Order" metric
 * Open [Replit](https://replit.com/)
 * Choose Python as your language
-* Import klaviyo and replace your Public and Private Keys in the example below by your own Keys (see Step #3)
-* If the phone number of your test user is US/CA, you will need to wait for your Toll-free number to be verified (see Step #4)
-* Remember that in Klaviyo, a user's ID is defined by their email address. Make sure to add a new one when creating a new user
-* Add as many customer_properties as needed
-* Then, click on the Run button to run your script. You will see a light brown arrow under "Console" if you script was successfully launched
-  * ![runconsole](https://user-images.githubusercontent.com/48727972/189551343-0ddb148a-72d2-4669-ad55-dd40c9261f6b.png)
-
-```
+* Import klaviyo and replace the private and public tokens with your own Public and Private Keys (see Step #3)
+```python
 import klaviyo
 
-client = klaviyo.Klaviyo(public_token='UevQRb')
+client = klaviyo.Klaviyo(public_token='******')
 private_token='pk_**********************************'
-
 
 def sendToKlaviyo():
   client.Public.track(
     'Fulfilled Order',
     email='enoratest@gmail.com',
     customer_properties={
-      "$first_name":"Enora3",
+      "$first_name":"Enora",
       "phone_number":"+1*********",
-      "$city":"Los Angeles, CA"
+      "$city":"Aliso Viejo, CA",
     },
   )
 
 sendToKlaviyo()
 ```
+
+* Remember that in Klaviyo, a user's ID is defined by their email address. Make sure to add a new one when creating a new user
+* Add as many customer_properties as needed
+   * Note: The phone numbers of your test users in the US/CA, you will need to wait for your Toll-free number to be verified (see Step #4)
+* Then, click on the Run button to run your script. You will see a light brown arrow under "Console" if you script was successfully launched
+  * ![shell](https://user-images.githubusercontent.com/48727972/189552537-a691a15f-f3fa-48ad-b68c-7943f1fce475.png)
 
 #### 6.2  Verify in Klaviyo that the new user was created and that the Metric "Fulfilled Order" was added to their profile
 * Go back to your Klaviyo dashboard
@@ -104,10 +103,6 @@ sendToKlaviyo()
  * If you see a 1 next to Skipped or Waiting instead, the SMS was not sent. 
    * For more information: [Most common reason an SMS is not delivered](https://help.klaviyo.com/hc/en-us/articles/1260805003210-Understanding-the-skipped-reason-for-a-flow-message)
    * ![analytics](https://user-images.githubusercontent.com/48727972/189551732-07b57bd3-bd29-45ee-89ae-b7bb7760ab0c.png)
-
-**Klaviyo API to create a new user and create the event 'Fulfilled Order'**
-- ![Python](https://user-images.githubusercontent.com/48727972/189538238-e5dc5e4b-c9d9-418f-9598-9eadeaf76cc8.png)
-
 
 ### 7. Where to go from there? Roadblocks and lessons
 
@@ -127,10 +122,7 @@ sendToKlaviyo()
  * Once I get the data, what is the next step? How do I want to collect, organize, filter and present the data? (ref: the 5 W)
 
 #### 7.4 What are some questions I wish I could have answered with this Project? 
-* What Products have on average the lowest delivery experience rate? Why?
-* What Products have on average the highest delivery experience rate? Why?
-
+* Which products have on average the lowest delivery experience rate? Why?
+* Which products have on average the highest delivery experience rate? Why?
 * Which countries have on average the lowest delivery experience rate? Why?
 * Which countries have on average the highest delivery experience rate? Why?
-
-
