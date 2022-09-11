@@ -61,7 +61,7 @@ To test that your flow is functional, we are going to create a script in Python 
 #### 6.1 Add a new user and trigger the "Fulfilled Order" metric
 * Open [Replit](https://replit.com/)
 * Choose Python as your language
-* import klaviyo and replace your Public and Private Keys in the example below by your own Keys (see Step #3)
+* Import klaviyo and replace your Public and Private Keys in the example below by your own Keys (see Step #3)
 * If the phone number of your test user is US/CA, you will need to wait for your Toll-free number to be verified (see Step #4)
 * Remember that in Klaviyo, a user's ID is defined by their email address. Make sure to add a new one when creating a new user
 * Add as many customer_properties as needed
@@ -109,6 +109,28 @@ sendToKlaviyo()
 - ![Python](https://user-images.githubusercontent.com/48727972/189538238-e5dc5e4b-c9d9-418f-9598-9eadeaf76cc8.png)
 
 
-#### 7. Where to go from there? Roadblocks and lessons
+### 7. Where to go from there? Roadblocks and lessons
+
+#### 7.1 US SMS
+* My first roadblock was the impossibility to test my Flow on my phone number, as the Toll-Free number is still pending verification and there is no free option to send SMS to a US user from a personal phone.  
+ * To resolve, I created a free UK number and confirmed that the SMS #1 from the Flow was sent, but its Status is "Waiting" and I am unable to answer the SMS to give the delivery experience a rating. 
+* My second roablock is that I was not able to validate the customer_properties={$consent: True}, to authorize a test user to receive a US SMS. 
+ * To resolve, I tried to replicate my Flow with an email survey instead of a SMS survey to confirm that the email would be sent once the metric "Fulfilled Order" would be triggered. 
+ * I was not able to find a way to listen to the metric "Sent Email" to listen to the rating of a test user, the way I configured it with "Sent SMS" on my primary SMS Flow. 
+
+#### 7.2 Open-ended survey
+* My survey ask the user to rate their delivery experience from 1 to 5. What if they answer with a spelled number instead of a numerical number (e.g. five instead of 5)? What if they add more text to the body of the SMS (e.g. excellent, 5 stars!)? 
+* I was not sure if I wanted to send a survey for users who rated the experience 4 stars. Do we want to gather more data to see how the delivery experience could have been improved and become a 5?
+
+#### 7.3 Lack of data
+* Because I was not able to fully test the Flow, I was not able to collect the data from the survey.
+ * Once I get the data, what is the next step? How do I want to collect, organize, filter and present the data? (ref: the 5 W)
+
+#### 7.4 What are some questions I wish I could have answered with this Project? 
+* What Products have on average the lowest delivery experience rate? Why?
+* What Products have on average the highest delivery experience rate? Why?
+
+* Which countries have on average the lowest delivery experience rate? Why?
+* Which countries have on average the highest delivery experience rate? Why?
 
 
