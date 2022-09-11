@@ -1,12 +1,39 @@
-# SMS_Delivery_Survey
+# SMS Delivery Survey
 
-
-**Project:**
 Send an SMS survey once a product has been delivered to a client. Clients can rate the delivery experience: low ratings would trigger a follow-up survey to ask how to improve the delivery experience, high ratings would send a thank you message.
 
-**Tools:**
+## Tools:
 - [Klaviyo API](https://developers.klaviyo.com/en/reference/api-overview)
 - [Python](https://www.python.org/)
+
+## Instructions:
+
+### 1. Create a Klaviyo Account
+* For instructions: [Create a sandbox account](https://developers.klaviyo.com/en/docs/create-a-test-account)
+
+### 2. Generate sample data (dummy users)
+* For instructions: [Generate sample data](https://developers.klaviyo.com/en/docs/generate-sample-data)
+
+### 3. Get your Public & Private API Keys
+* For instructions: [Obtain API credentials](https://developers.klaviyo.com/en/docs/retrieve-api-credentials)
+
+### 4 Set up SMS
+* For instructions: [How to turn on SMS in Klaviyo ](https://help.klaviyo.com/hc/en-us/articles/4404274419355-How-to-turn-on-SMS-in-Klaviyo)
+* More information on the US/CA Toll-free number: [Understand toll-free number verification ](https://help.klaviyo.com/hc/en-us/articles/4415873897499-Understand-toll-free-number-verification)
+
+### 5. Create your first Flow
+#### 3.1. Initial set up
+* Select "Flows" from the left menu
+* Click "Create Flow"
+* Use a pre-built Flow, or in this case, click on "Create From Scratch"
+* Give your flow a name and tags (optional)
+#### 3.2 Create the Flow
+* In this instance, we want to create a flow once a product has been delivered to a client, "Order Fulfilled"
+
+
+
+
+
 
 
 **Flow from Klaviyo with integrated Analytics**
