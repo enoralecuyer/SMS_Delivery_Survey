@@ -15,7 +15,7 @@ Send an SMS survey once a product has been delivered to a client. Clients can ra
 **Klaviyo API to create a new user and create the event 'Fulfilled Order'**
 - ![Python](https://user-images.githubusercontent.com/48727972/189538238-e5dc5e4b-c9d9-418f-9598-9eadeaf76cc8.png)
 
-**Waiting for the Toll-free US number to be verified**
+**Waiting for the Toll-free US number to be verified** [(help center article)](https://help.klaviyo.com/hc/en-us/articles/4415873897499-Understand-toll-free-number-verification)
 ![verifying](https://user-images.githubusercontent.com/48727972/189538660-d4b92d67-a2d7-4e61-8080-4641a77bb795.png)
 
 [Most common reason an SMS is not delivered](https://help.klaviyo.com/hc/en-us/articles/1260805003210-Understanding-the-skipped-reason-for-a-flow-message)
