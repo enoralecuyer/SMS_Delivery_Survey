@@ -51,15 +51,64 @@ The goal of this Flow is to receive feedback on the delivery experience, once a 
 
 #### 5.3. Analyze your Flow
 * Click on "Show Analytics" to display the rates of success of your Flow
-* ![Flow](https://user-images.githubusercontent.com/48727972/189538053-99ad77a8-bb80-481f-88fe-8b2d1d62f91b.png)
+  * ![Flow](https://user-images.githubusercontent.com/48727972/189538053-99ad77a8-bb80-481f-88fe-8b2d1d62f91b.png)
 
-#### 6. Test your Flow
+### 6. Test your Flow with Klaviyo API
 
-To test that your flow is functional, we are going to create a script in Python and use the Klaviyo API. No need to create a new website, simply open your favorite web-based IDE (integrated development environment). In this case, I use [Replit](https://replit.com/).
+To test that your flow is functional, we are going to create a script in Python and use the Klaviyo API. 
+* No need to create a new website, simply open your favorite web-based IDE (integrated development environment). For this project, I used [Replit](https://replit.com/).
+
+#### 6.1 Add a new user and trigger the "Fulfilled Order" metric
+* Open [Replit](https://replit.com/)
+* Choose Python as your language
+* import klaviyo and replace your Public and Private Keys in the example below by your own Keys (see Step #3)
+* If the phone number of your test user is US/CA, you will need to wait for your Toll-free number to be verified (see Step #4)
+* Remember that in Klaviyo, a user's ID is defined by their email address. Make sure to add a new one when creating a new user
+* Add as many customer_properties as needed
+* Then, click on the Run button to run your script. You will see a light brown arrow under "Console" if you script was successfully launched
+  * ![runconsole](https://user-images.githubusercontent.com/48727972/189551343-0ddb148a-72d2-4669-ad55-dd40c9261f6b.png)
+
+```
+import klaviyo
+
+client = klaviyo.Klaviyo(public_token='UevQRb')
+private_token='pk_**********************************'
 
 
+def sendToKlaviyo():
+  client.Public.track(
+    'Fulfilled Order',
+    email='enoratest@gmail.com',
+    customer_properties={
+      "$first_name":"Enora3",
+      "phone_number":"+1*********",
+      "$city":"Los Angeles, CA"
+    },
+  )
+
+sendToKlaviyo()
+```
+
+#### 6.2  Verify in Klaviyo that the new user was created and that the Metric "Fulfilled Order" was added to their profile
+* Go back to your Klaviyo dashboard
+* Click on "Profiles" under "Audience"
+* If the script was run successfully, you will see the new user at the top of the list.
+* Click on their name. Confirm that the metric "Fulfilled Order" is under Metrics. You should see a green (+1) next to this metric. 
+![fulfilled](https://user-images.githubusercontent.com/48727972/189551499-e9737f63-6a2d-4fbd-b14b-1ef8a5f19f4e.png)
+
+#### 6.3 Let's Analyze the Flow and confirm that the SMS was triggered!
+* Go back to your Klaviyo dashboard
+* Click on "Flows" and open the SMS Delivery Flow by clicking on its name
+* Click on SMS #1 and view Analytics on the left-sided menu
+ * If you see a 1 next to Delivered, the SMS was successfully sent!
+ * If you see a 1 next to Skipped or Waiting instead, the SMS was not sent. 
+   * For more information: [Most common reason an SMS is not delivered](https://help.klaviyo.com/hc/en-us/articles/1260805003210-Understanding-the-skipped-reason-for-a-flow-message)
+   * ![analytics](https://user-images.githubusercontent.com/48727972/189551732-07b57bd3-bd29-45ee-89ae-b7bb7760ab0c.png)
 
 **Klaviyo API to create a new user and create the event 'Fulfilled Order'**
 - ![Python](https://user-images.githubusercontent.com/48727972/189538238-e5dc5e4b-c9d9-418f-9598-9eadeaf76cc8.png)
 
-[Most common reason an SMS is not delivered](https://help.klaviyo.com/hc/en-us/articles/1260805003210-Understanding-the-skipped-reason-for-a-flow-message)
+
+#### 7. Where to go from there? Roadblocks and lessons
+
+
