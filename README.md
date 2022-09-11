@@ -108,9 +108,9 @@ sendToKlaviyo()
 
 #### 7.1 US SMS
 * My first roadblock was the impossibility to test my Flow on my phone number, as the Toll-Free number is still pending verification and there is no free option to send SMS to a US user from a personal phone.  
- * To resolve, I created a free UK number and confirmed that the SMS #1 from the Flow was sent, but its Status is "Waiting" and I am unable to answer the SMS to give the delivery experience a rating. 
+  * To resolve, I created a free UK number and confirmed that the SMS #1 from the Flow was sent, but its Status is "Waiting" and I am unable to answer the SMS to give the delivery experience a rating. 
 * My second roablock is that I was not able to validate the customer_properties={$consent: True}, to authorize a test user to receive a US SMS. 
- * To resolve, I tried to replicate my Flow with an email survey instead of a SMS survey to confirm that the email would be sent once the metric "Fulfilled Order" would be triggered. 
+  * To resolve, I tried to replicate my Flow with an email survey instead of a SMS survey to confirm that the email would be sent once the metric "Fulfilled Order" would be triggered. 
  * I was not able to find a way to listen to the metric "Sent Email" to listen to the rating of a test user, the way I configured it with "Sent SMS" on my primary SMS Flow. 
 
 #### 7.2 Open-ended survey
