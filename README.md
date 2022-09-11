@@ -53,12 +53,13 @@ The goal of this Flow is to receive feedback on the delivery experience, once a 
 * Click on "Show Analytics" to display the rates of success of your Flow
 * ![Flow](https://user-images.githubusercontent.com/48727972/189538053-99ad77a8-bb80-481f-88fe-8b2d1d62f91b.png)
 
+#### 6. Test your Flow
+
+To test that your flow is functional, we are going to create a script in Python and use the Klaviyo API. No need to create a new website, simply open your favorite web-based IDE (integrated development environment). In this case, I use [Replit](https://replit.com/).
+
 
 
 **Klaviyo API to create a new user and create the event 'Fulfilled Order'**
 - ![Python](https://user-images.githubusercontent.com/48727972/189538238-e5dc5e4b-c9d9-418f-9598-9eadeaf76cc8.png)
-
-**Waiting for the Toll-free US number to be verified** [(help center article)](https://help.klaviyo.com/hc/en-us/articles/4415873897499-Understand-toll-free-number-verification)
-![verifying](https://user-images.githubusercontent.com/48727972/189538660-d4b92d67-a2d7-4e61-8080-4641a77bb795.png)
 
 [Most common reason an SMS is not delivered](https://help.klaviyo.com/hc/en-us/articles/1260805003210-Understanding-the-skipped-reason-for-a-flow-message)
