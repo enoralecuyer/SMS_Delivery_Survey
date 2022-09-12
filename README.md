@@ -22,7 +22,7 @@ Send an SMS survey once a product has been delivered to a client. Clients can ra
 * More information on the US/CA Toll-free number: [Understand toll-free number verification.](https://help.klaviyo.com/hc/en-us/articles/4415873897499-Understand-toll-free-number-verification)
 
 ### 5. Create your first Flow
-The goal of this Flow is to receive feedback on the delivery experience once a user has received a Product. 
+The goal of this Flow is to receive feedback on the delivery experience once a user has received a product. 
 
 #### 5.1 Set up the Flow
 * Select "Flows" from the left menu.
