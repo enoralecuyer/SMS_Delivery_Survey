@@ -118,7 +118,7 @@ sendToKlaviyo()
 * I was not sure if I wanted to send a survey for users who rated the experience 4 stars. Do we want to gather more data to see how the delivery experience could have been improved and become a 5?
 
 #### 7.3 Lack of data
-* Because I was not able to fully test the Flow, I was not able to collect the data from the survey.
+* Because I was not able to fully test the Flow, I was not able to collect data from the survey.
  * Once I get the data, what is the next step? How do I want to collect, organize, filter and present the data?
 
 #### 7.4 What are some questions I wish I could have answered with this Project? 
