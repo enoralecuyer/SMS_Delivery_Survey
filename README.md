@@ -140,9 +140,9 @@ sendToKlaviyo()
 #### 7.4 What are some questions I wish I could have answered with this Project? 
 * Which **products** have on average the lowest or highest delivery experience rate? Why?
 * Which **countries** have on average the lowest or highest delivery experience rate? Why?
-* Is their a time of the year when users have a lower delivery experience?
-   * If one of the cause is delayed delivery, do businessed need to communicate with their users beforehand if delays are expected (weather, holiday season), to manage expectations? 
-   * What else could we learn from these ratings and surveys? 
+* Is their a **time of the year** when users have a lower delivery experience? 
+   * Delays? Do businessed need to communicate with their users beforehand if delays are expected (weather, holiday season), to manage expectations? 
+* What else could we learn from these ratings and surveys? 
 
 ### 8. GET? POST? PUT? DELETE?
-So far, I have only used the Klaviyo API to send data to the Klaviyo dashboard and trigger the Flow. If I had data from the survey, how would I use this data? 
+So far, I have only used the Klaviyo API to create users and trigger the Flow. If I had data from the survey, how would I use this data? 
