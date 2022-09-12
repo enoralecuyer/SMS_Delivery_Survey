@@ -132,11 +132,17 @@ sendToKlaviyo()
 
 #### 7.3 Lack of data
 * Because I was not able to fully test the Flow, I was not able to collect data from the survey.
- * Once I get the data, what is the next step? How do I want to collect, organize, filter and present the data?
+   * Once I get the data, what are the next steps? How do I want to collect, organize, filter and present the data?
+     * Create a new segment for users who rated the delivery experience
+     * Create a new segment for users who rated the delvery experience AND completed the survey
+     * Extract the data from the ratingsa & surveys with the Klaviyo API and/or by exporting the data via CSV
 
 #### 7.4 What are some questions I wish I could have answered with this Project? 
-* Which products have on average the lowest or highest delivery experience rate? Why?
-* Which countries have on average the lowest or highest delivery experience rate? Why?
+* Which **products** have on average the lowest or highest delivery experience rate? Why?
+* Which **countries** have on average the lowest or highest delivery experience rate? Why?
+* Is their a time of the year when users have a lower delivery experience?
+   * Do businessed need to communicate with their users beforehand if delays (weather, holiday season) are expected, to manage expectations? 
+   * What else could we learn from these ratings and surveys? 
 
 ### 8. GET? POST? PUT? DELETE?
 So far, I have only used the Klaviyo API to send data to the Klaviyo dashboard. If I had all the data from the survey, how would I answer the questions above?
