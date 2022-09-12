@@ -40,13 +40,13 @@ The goal of this Flow is to receive feedback on the delivery experience once a u
   * Write the body of the SMS and add dynamic Properties as needed, e.g First Name. 
     * We want to invite the user to rate their delivery experience from 1 (low) to 5 (high).
     * Once you are done configuring your SMS, click "Save Content" and "Done".
-* Now that the first SMS is set up, we want to create a Conditional Split based on the answer from the user: If the user rates the delivery between 1-4, we send them a follow-up survey; if the user rates the delivery 5, we send them a thank you.
+* Now that the first SMS is set up, we want to create a Conditional Split based on the answer from the user: If the user rates the delivery between 1-4, we send them a follow-up survey; if the user rates the delivery 5, we send them a thank you message.
   * Drag and drop the Logic "Conditional Split" on the node below SMS #1 .
   * Configure your Conditional Split based on the SMS sent by the user:
     *  "Select a condition" > "What someone has done (or not done)" > "Choose Metric" > "Sent SMS".
   *  Then, add a Property to the Conditional Split:
      *  Funnel icon > "Choose property" > "Message Body" > "equals" > "1" > "at least once" > "since starting this flow".
-  *  Repeat by clicking on the operator "AND" when the "Message Body" equals 2, 3, and 4.
+  *  Repeat by clicking on the operator "AND" so that the "Message Body" equals 2, 3, and 4.
    * ![and](https://user-images.githubusercontent.com/48727972/189691600-6b66160b-2c66-4b9d-bdfc-1cd7d26b6017.png)
 
 * Now that the Conditional Split is set up, we have two branches, Yes and No, which correspond to Conditional Split is True, or Conditional Split is False.
@@ -118,8 +118,8 @@ sendToKlaviyo()
 * My first roadblock was the impossibility to test the Flow with my phone number, as the Toll-Free number is still pending verification and there is no free option to send SMS to a US phone number.
   * Troubleshooting:
     * I created a free UK number and assigned it to a dummy user. I confirmed that the Flow was successfully triggered and that the first SMS was sent to the user, with a "waiting" status: the free UK number is limited and doesn't offer the option to reply to the SMS or consent to Klaviyo SMS. 
-    * I also added the customer_properties={$consent: True} to the dummy user to authorize them to receive a SMS from Klaviyo, but I was still unable to reply to the SMS. 
-    * I duplicated my Flow so that the survey would be sent via email instead of SMS. I was not able to find a way to listen to the reply of the user (e.g. Sent Email), the way I previously did with my initial Flow (e.g. Send SMS). 
+    * I followed [this documentation](https://help.klaviyo.com/hc/en-us/articles/360054803711#setup-requirements1) to implement SMS consent via API, but I was still unable to reply to the SMS. 
+    * I duplicated my Flow so that the survey would be sent via email instead of SMS. I was not able to find a way to listen to the reply of the user (e.g. Sent Email), the way I previously did with my initial Flow (e.g. Sent SMS). 
 
 #### 7.2 Open-ended survey
 * My survey asks the user to rate their delivery experience from 1 to 5.
