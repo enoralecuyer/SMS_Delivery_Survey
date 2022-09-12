@@ -24,14 +24,14 @@ Send an SMS survey once a product has been delivered to a client. Clients can ra
 ### 5. Create your first Flow
 The goal of this Flow is to receive feedback on the delivery experience once a user has received a Product. 
 
-#### 5.1. Set up the Flow
+#### 5.1 Set up the Flow
 * Select "Flows" from the left menu
 * Click "Create Flow"
 * Use a pre-built Flow, or in this case, click on "Create From Scratch"
 * Give your Flow a name and tags (optional)
 * For general instructions: [Getting started with flows](https://help.klaviyo.com/hc/en-us/articles/115002774932-Getting-Started-with-Flows)
 
-#### 5.2. Customize the Flow
+#### 5.2 Customize the Flow
 * We want the Metric "Fulfilled Order" to trigger the Flow:
   * Select "Metric", "Fulfilled Order", and press "Done"
 * We want to send an SMS to the user once the order has been fulfilled:
@@ -53,7 +53,7 @@ The goal of this Flow is to receive feedback on the delivery experience once a u
   * Set up an SMS under "YES" so that a follow up survey is sent to the user
   * Set up an SMS under "NO" so that a thank you message is sent to the user
 
-#### 5.3. Analyze your Flow
+#### 5.3 Analyze your Flow
 * Click on "Show Analytics" from the top header
 * For more information: [Understanding flow analytics](https://help.klaviyo.com/hc/en-us/articles/115002779351-Understanding-flow-analytics)
   * ![Flow](https://user-images.githubusercontent.com/48727972/189538053-99ad77a8-bb80-481f-88fe-8b2d1d62f91b.png)
@@ -102,7 +102,6 @@ sendToKlaviyo()
 * Click on their name. Confirm that the metric "Fulfilled Order" is under Metrics. You should see a green (+1) next to this metric. 
   * ![fulfilled](https://user-images.githubusercontent.com/48727972/189691958-cfe25ddd-4b1c-4210-a6a1-ee8dc7b9f72f.png)
 
-
 #### 6.3 Confirm that the Flow was triggered and the first SMS sent!
 * Go back to your Klaviyo dashboard
 * Click on "Flows" and open the SMS Delivery Flow
@@ -111,7 +110,6 @@ sendToKlaviyo()
   * If you see a 1 next to Skipped or Waiting instead, the SMS was not sent. 
     * For more information: [Most common reason an SMS is not delivered](https://help.klaviyo.com/hc/en-us/articles/1260805003210-Understanding-the-skipped-reason-for-a-flow-message)
    * ![analytics](https://user-images.githubusercontent.com/48727972/189692527-2e6529d0-56d2-4e6d-ad67-5cfab790e3eb.png)
-
 
 ### 7. Where to go from there? Roadblocks and lessons
 
