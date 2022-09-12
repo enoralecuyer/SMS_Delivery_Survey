@@ -63,10 +63,11 @@ The goal of this Flow is to receive feedback on the delivery experience once a u
 To test that your flow is functional, we are going to create a script in Python and use the Klaviyo API. 
 * No need to create a new website, simply open your favorite web-based IDE (integrated development environment). For this project, I used [Replit](https://replit.com/).
 
-#### 6.1 Add a new user and trigger the "Fulfilled Order" metric
+#### 6.1 Add a new user and trigger the "Fulfilled Order" Metric
 * Open [Replit](https://replit.com/)
-* Choose Python as your language
-* Import klaviyo and replace the private and public tokens with your own Public and Private Keys (see Step #3)
+* Click "Create" and choose Python as your language
+* Copy/paste the script below and replace the private and public tokens with your own Public and Private Keys (see Step #3)
+* Click on the Run button to run your script. You will see a light brown arrow under "Console" if you script was successfully launched
 ```python
 import klaviyo
 
@@ -87,14 +88,14 @@ def sendToKlaviyo():
 sendToKlaviyo()
 ```
 
-* Remember that in Klaviyo, a user's ID is defined by their email address. Make sure to add a new one when creating a new user
-* Add as many customer_properties as needed
-   * Note: The phone numbers of your test users in the US/CA, you will need to wait for your Toll-free number to be verified (see Step #4)
-* Then, click on the Run button to run your script. You will see a light brown arrow under "Console" if you script was successfully launched
-  * ![console](https://user-images.githubusercontent.com/48727972/189691804-d039b165-ee40-49de-8a33-4bb6b3952dc5.png)
+* Explanation of the script:
+  * We create a new user who has just fulfilled on order
+  * We add a phone number to the user's profile (customer_properties) to make sure they can receive the SMS from the Flow. 
+* Pro Tips:
+   * Remember that in Klaviyo, a user's ID is defined by their email address. Make sure to add a new email address when creating a new user
+   * If you create a user with a US/CA phone number, make sure that your Toll-free number has already been validated (See Step #4) or that you suscribed to Klaviyo's Paid plan.
 
-
-#### 6.2  Verify in Klaviyo that the new user was created and that the Metric "Fulfilled Order" was added to their profile
+#### 6.2  Confirm that the new user was created in Klaviyo and that the Metric "Fulfilled Order" was added to their profile
 * Go back to your Klaviyo dashboard
 * Click on "Profiles" under "Audience"
 * If the script was run successfully, you will see the new user at the top of the list.
@@ -102,13 +103,13 @@ sendToKlaviyo()
   * ![fulfilled](https://user-images.githubusercontent.com/48727972/189691958-cfe25ddd-4b1c-4210-a6a1-ee8dc7b9f72f.png)
 
 
-#### 6.3 Let's Analyze the Flow and confirm that the SMS was triggered!
+#### 6.3 Confirm that the Flow was triggered and the first SMS sent!
 * Go back to your Klaviyo dashboard
-* Click on "Flows" and open the SMS Delivery Flow by clicking on its name
-* Click on SMS #1 and view Analytics on the left-sided menu
- * If you see a 1 next to Delivered, the SMS was successfully sent!
- * If you see a 1 next to Skipped or Waiting instead, the SMS was not sent. 
-   * For more information: [Most common reason an SMS is not delivered](https://help.klaviyo.com/hc/en-us/articles/1260805003210-Understanding-the-skipped-reason-for-a-flow-message)
+* Click on "Flows" and open the SMS Delivery Flow
+* Click on SMS #1 to check the associated analytics
+  * If you see a 1 next to Delivered, the SMS was successfully sent!
+  * If you see a 1 next to Skipped or Waiting instead, the SMS was not sent. 
+    * For more information: [Most common reason an SMS is not delivered](https://help.klaviyo.com/hc/en-us/articles/1260805003210-Understanding-the-skipped-reason-for-a-flow-message)
    * ![analytics](https://user-images.githubusercontent.com/48727972/189692527-2e6529d0-56d2-4e6d-ad67-5cfab790e3eb.png)
 
 
