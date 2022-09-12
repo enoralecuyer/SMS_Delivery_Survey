@@ -136,7 +136,7 @@ sendToKlaviyo()
    * Once I get the data, what are the next steps? How do I want to collect, organize, filter and present the data?
      * Create a new segment for users who rated the delivery experience.
      * Create a new segment for users who rated the delivery experience AND completed the survey.
-     * Extract the data from the ratings & surveys with the Klaviyo API and/or by exporting the data via CSV.
+     * Extract the data from the ratings & surveys with the Klaviyo API and/or CSV export.
 
 #### 7.4 What are some questions I wish I could have answered with this Project? 
 * Which **products** have on average the lowest or highest delivery experience rate? Why?
