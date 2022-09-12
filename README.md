@@ -44,7 +44,8 @@ The goal of this Flow is to receive feedback on the delivery experience, once a 
    *  Click on the drop-down menu "Select a condition" > What someone has done (or not done) > Choose Metric > Sent SMS
    *  Then, add a property by clicking on the funnel icon > Choose property > Message Body > Equals > 1 > at least once > since starting this flow
    *  Click "AND" and repeat for Message Body equals 2 and 3, and Save
-   * ![conditional](https://user-images.githubusercontent.com/48727972/189550497-54377d4f-5d7b-44df-b939-da0758092d65.png)
+   * ![and](https://user-images.githubusercontent.com/48727972/189691600-6b66160b-2c66-4b9d-bdfc-1cd7d26b6017.png)
+
 
 * If the user has replied in the body of the SMS 1, 2, or 3, the Conditional is True (Yes). They will then receive an SMS with a survey. Insert the SMS #2 under "YES"
 * If the user has replied in the body of the SMS 4 or 5, the Conditioanl is False (No). They will receive a Thank you SMS. Insert the SMS #3 under "NO"
@@ -86,14 +87,16 @@ sendToKlaviyo()
 * Add as many customer_properties as needed
    * Note: The phone numbers of your test users in the US/CA, you will need to wait for your Toll-free number to be verified (see Step #4)
 * Then, click on the Run button to run your script. You will see a light brown arrow under "Console" if you script was successfully launched
-  * ![shell](https://user-images.githubusercontent.com/48727972/189552537-a691a15f-f3fa-48ad-b68c-7943f1fce475.png)
+  * ![console](https://user-images.githubusercontent.com/48727972/189691804-d039b165-ee40-49de-8a33-4bb6b3952dc5.png)
+
 
 #### 6.2  Verify in Klaviyo that the new user was created and that the Metric "Fulfilled Order" was added to their profile
 * Go back to your Klaviyo dashboard
 * Click on "Profiles" under "Audience"
 * If the script was run successfully, you will see the new user at the top of the list.
 * Click on their name. Confirm that the metric "Fulfilled Order" is under Metrics. You should see a green (+1) next to this metric. 
-  * ![fulfilled](https://user-images.githubusercontent.com/48727972/189551499-e9737f63-6a2d-4fbd-b14b-1ef8a5f19f4e.png)
+  * ![fulfilled](https://user-images.githubusercontent.com/48727972/189691958-cfe25ddd-4b1c-4210-a6a1-ee8dc7b9f72f.png)
+
 
 #### 6.3 Let's Analyze the Flow and confirm that the SMS was triggered!
 * Go back to your Klaviyo dashboard
@@ -102,7 +105,8 @@ sendToKlaviyo()
  * If you see a 1 next to Delivered, the SMS was successfully sent!
  * If you see a 1 next to Skipped or Waiting instead, the SMS was not sent. 
    * For more information: [Most common reason an SMS is not delivered](https://help.klaviyo.com/hc/en-us/articles/1260805003210-Understanding-the-skipped-reason-for-a-flow-message)
-   * ![analytics](https://user-images.githubusercontent.com/48727972/189551732-07b57bd3-bd29-45ee-89ae-b7bb7760ab0c.png)
+   * ![analytics](https://user-images.githubusercontent.com/48727972/189692527-2e6529d0-56d2-4e6d-ad67-5cfab790e3eb.png)
+
 
 ### 7. Where to go from there? Roadblocks and lessons
 
