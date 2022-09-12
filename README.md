@@ -103,7 +103,7 @@ sendToKlaviyo()
 * Click on their name. Confirm that the metric "Fulfilled Order" is under Metrics. You should see a green (+1) next to this metric. 
   * ![fulfilled](https://user-images.githubusercontent.com/48727972/189691958-cfe25ddd-4b1c-4210-a6a1-ee8dc7b9f72f.png)
 
-#### 6.3 Confirm that the Flow was triggered and the first SMS sent!
+#### 6.3 Confirm that the Flow was triggered and that the first SMS was sent!
 * Go back to your Klaviyo dashboard.
 * Click on "Flows" and open the SMS Delivery Flow.
 * Click on SMS #1 to check the associated analytics.
