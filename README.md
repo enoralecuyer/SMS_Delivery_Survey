@@ -65,7 +65,7 @@ To test that your flow is functional, we are going to create a script in Python 
 
 #### 6.1 Add a new user and trigger the "Fulfilled Order" Metric
 * Open [Replit.](https://replit.com/)
-* Click "Create" and choose Python as your language
+* Click "Create" and choose Python as your language.
 * Copy/paste the script below and replace the private and public tokens with your own Public and Private Keys (see Step #3).
 * Click on the Run button to run your script. You will see a light brown arrow under "Console" if you script was successfully launched.
 
@@ -124,8 +124,8 @@ sendToKlaviyo()
 #### 7.2 Open-ended survey
 * My survey asks the user to rate their delivery experience from 1 to 5.
   * Issues:
-    * What if the user answers the survey with additional text? (e.g "Amazing, 5 stars!")
-    * What if the user answers by spelling the rating instead of using a numerical value? (e.g "four") 
+    * What if the user answers the survey with additional text (e.g "Amazing, 5 stars!")?
+    * What if the user answers by spelling the rating instead of using a numerical value (e.g "four")?
   * Possible solutions:
     * Send a link to the survey instead of asking the user to rate directly via SMS.
     * Create an interactive SMS Campaign with buttons for 1-5 (coding needed).
