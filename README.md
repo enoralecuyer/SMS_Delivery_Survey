@@ -114,15 +114,21 @@ sendToKlaviyo()
 ### 7. Where to go from there? Roadblocks and lessons
 
 #### 7.1 US SMS
-* My first roadblock was the impossibility to test my Flow on my phone number, as the Toll-Free number is still pending verification and there is no free option to send SMS to a US user from a personal phone.  
-  * To resolve, I created a free UK number and confirmed that the SMS #1 from the Flow was sent, but its Status is "Waiting" and I am unable to answer the SMS to give the delivery experience a rating. 
-* My second roablock is that I was not able to validate the customer_properties={$consent: True}, to authorize a test user to receive a US SMS. 
-  * To resolve, I tried to replicate my Flow with an email survey instead of a SMS survey to confirm that the email would be sent once the metric "Fulfilled Order" would be triggered. 
- * I was not able to find a way to listen to the metric "Sent Email" to listen to the rating of a test user, the way I configured it with "Sent SMS" on my primary SMS Flow. 
+* My first roadblock was the impossibility to test the Flow with my phone number, as the Toll-Free number is still pending verification and there is no free option to send SMS to a US phone number.
+  * Troubleshooting:
+    * I created a free UK number and assigned it to a dummy user. I confirmed that the Flow was successfully triggered and that the first SMS was sent to the user, with a "waiting" status: the free UK number is limited and doesn't offer the option to reply to the SMS or consent to Klaviyo SMS. 
+    * I also added the customer_properties={$consent: True} to the dummy user to authorize to receive a SMS from Klaviyo, but I was still unable to reply to the SMS. 
+    * I duplicated my Flow so that the survey would be sent via email instead of SMS. I was not able find a way to listen to the reply of the user (e.g. Sent Email), the way I previously did with my initial Flow (e.g. Send SMS). 
 
 #### 7.2 Open-ended survey
-* My survey ask the user to rate their delivery experience from 1 to 5. What if they answer with a spelled number instead of a numerical number (e.g. five instead of 5)? What if they add more text to the body of the SMS (e.g. excellent, 5 stars!)? 
-* I was not sure if I wanted to send a survey for users who rated the experience 4 stars. Do we want to gather more data to see how the delivery experience could have been improved and become a 5?
+* My survey asks the user to rate their delivery experience from 1 to 5.
+  * Issues:
+    * What if the user answers the survey with additional text? (e.g "Amazing, 5 stars!") 
+    * What if the user answers by spelling the rating instead of using a numerical value? (e.g "four") 
+  * Possible solutions:
+    * Send a link to the survey instead of asking the user to rate directly via SMS
+    * Create an interactive SMS Campaign with buttons for 1-5 (coding needed)
+    * Create another Conditional Split that informs the user that their answer is invalid if they do not reply with 1-5 (e.g. "invalid answer")
 
 #### 7.3 Lack of data
 * Because I was not able to fully test the Flow, I was not able to collect data from the survey.
