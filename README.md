@@ -67,7 +67,7 @@ To test that your flow is functional, we are going to create a script in Python 
 * Open [Replit.](https://replit.com/)
 * Click "Create" and choose Python as your language.
 * Copy/paste the script below and replace the private and public tokens with your own Public and Private Keys (see Step #3).
-* Click on the Run button to run your script. You will see a light brown arrow under "Console" if you script was successfully launched.
+* Click on the Run button to run your script. You will see a light brown arrow under "Console" if your script was successfully launched.
 
 ```python
 import klaviyo
