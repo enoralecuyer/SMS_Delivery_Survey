@@ -117,7 +117,7 @@ sendToKlaviyo()
 * My first roadblock was the impossibility to test the Flow with my phone number, as the Toll-Free number is still pending verification and there is no free option to send SMS to a US phone number.
   * Troubleshooting:
     * I created a free UK number and assigned it to a dummy user. I confirmed that the Flow was successfully triggered and that the first SMS was sent to the user, with a "waiting" status: the free UK number is limited and doesn't offer the option to reply to the SMS or consent to Klaviyo SMS. 
-    * I also added the customer_properties={$consent: True} to the dummy user to authorize to receive a SMS from Klaviyo, but I was still unable to reply to the SMS. 
+    * I also added the customer_properties={$consent: True} to the dummy user to authorize them to receive a SMS from Klaviyo, but I was still unable to reply to the SMS. 
     * I duplicated my Flow so that the survey would be sent via email instead of SMS. I was not able find a way to listen to the reply of the user (e.g. Sent Email), the way I previously did with my initial Flow (e.g. Send SMS). 
 
 #### 7.2 Open-ended survey
