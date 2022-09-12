@@ -93,7 +93,7 @@ sendToKlaviyo()
 * Click on "Profiles" under "Audience"
 * If the script was run successfully, you will see the new user at the top of the list.
 * Click on their name. Confirm that the metric "Fulfilled Order" is under Metrics. You should see a green (+1) next to this metric. 
-  *![fulfilled](https://user-images.githubusercontent.com/48727972/189551499-e9737f63-6a2d-4fbd-b14b-1ef8a5f19f4e.png)
+  * ![fulfilled](https://user-images.githubusercontent.com/48727972/189551499-e9737f63-6a2d-4fbd-b14b-1ef8a5f19f4e.png)
 
 #### 6.3 Let's Analyze the Flow and confirm that the SMS was triggered!
 * Go back to your Klaviyo dashboard
