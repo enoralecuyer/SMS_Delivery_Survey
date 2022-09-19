@@ -202,5 +202,6 @@ You can access your full SMS Conversation directly from your Klaviyo Dashboard.
 
 ![sms conversation](https://user-images.githubusercontent.com/48727972/191107703-74a5d719-d518-41fb-8a6d-afbfb1ca5166.jpg)
 
+#### 8.4 Removed Smart Sending and Quiet Hours
 
-
+So that users can receive several SMS in a row, at all hours of the day. 
