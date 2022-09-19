@@ -176,6 +176,24 @@ print(response.text)
 
 ![consent2](https://user-images.githubusercontent.com/48727972/191102720-7037d7e6-1d57-4166-bb46-3471eaabd1c3.jpg)
 
+#### 8.2 Triggering the Fulfilled Order Metric, which triggered the SMS #1 from our Flow
+
+```
+import klaviyo
+
+client = klaviyo.Klaviyo(public_token='******')
+private_token='pk_**********************************'
+
+def sendToKlaviyo():
+  client.Public.track(
+    'Fulfilled Order',
+    email='***********@gmail.com',
+  )
+sendToKlaviyo()
+```
+
+![12](https://user-images.githubusercontent.com/48727972/191106817-2b6d5ef3-0a1a-4acd-bdf9-1dbdf558a4da.png)
+
 
 
 
