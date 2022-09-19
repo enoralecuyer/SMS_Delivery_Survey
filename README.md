@@ -148,8 +148,8 @@ sendToKlaviyo()
 ### 8. Breakthrough
 
 #### 8.1 Getting SMS Consent
-[Guide to Collecting SMS Consent via API](https://help.klaviyo.com/hc/en-us/articles/360054803711)
-[How to find a list ID](https://help.klaviyo.com/hc/en-us/articles/115005078647-How-to-Find-a-List-ID)
+* [Guide to Collecting SMS Consent via API](https://help.klaviyo.com/hc/en-us/articles/360054803711)
+* [How to find a list ID](https://help.klaviyo.com/hc/en-us/articles/115005078647-How-to-Find-a-List-ID)
 
 ``` python
 import requests
