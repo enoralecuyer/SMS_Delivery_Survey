@@ -172,9 +172,9 @@ response = requests.request("POST", "https://a.klaviyo.com/api/v2/list/******/su
 print(response.text)
 ```
 
-![1](https://user-images.githubusercontent.com/48727972/191102212-56e6a432-caae-49f1-99f5-f3297446d980.jpg)
+* ![1](https://user-images.githubusercontent.com/48727972/191102212-56e6a432-caae-49f1-99f5-f3297446d980.jpg)
 
-![consent2](https://user-images.githubusercontent.com/48727972/191102720-7037d7e6-1d57-4166-bb46-3471eaabd1c3.jpg)
+* ![consent2](https://user-images.githubusercontent.com/48727972/191102720-7037d7e6-1d57-4166-bb46-3471eaabd1c3.jpg)
 
 #### 8.2 Triggering the Fulfilled Order Metric, which triggered the SMS #1 from our Flow
 
@@ -192,7 +192,7 @@ def sendToKlaviyo():
 sendToKlaviyo()
 ```
 
-![12](https://user-images.githubusercontent.com/48727972/191106817-2b6d5ef3-0a1a-4acd-bdf9-1dbdf558a4da.png)
+* ![12](https://user-images.githubusercontent.com/48727972/191106817-2b6d5ef3-0a1a-4acd-bdf9-1dbdf558a4da.png)
 
 
 #### 8.3 SMS Conversation
@@ -200,7 +200,7 @@ sendToKlaviyo()
 You can access your full SMS Conversation directly from your Klaviyo Dashboard.
 [Guide to SMS conversations](https://help.klaviyo.com/hc/en-us/articles/360059002271-Guide-to-SMS-conversations-)
 
-![sms conversation](https://user-images.githubusercontent.com/48727972/191107703-74a5d719-d518-41fb-8a6d-afbfb1ca5166.jpg)
+* ![sms conversation](https://user-images.githubusercontent.com/48727972/191107703-74a5d719-d518-41fb-8a6d-afbfb1ca5166.jpg)
 
 #### 8.4 Removed Smart Sending and Quiet Hours
 
