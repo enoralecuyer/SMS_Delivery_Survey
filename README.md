@@ -144,3 +144,37 @@ sendToKlaviyo()
 * Is their a **time of the year** when users have a lower delivery experience? 
    * Delays? Do businessed need to communicate with their users beforehand if delays are expected (weather, holiday season), to manage expectations? 
 * What else could we learn from these ratings and surveys?
+
+### 8. Breakthrough
+
+#### 8.1 Getting SMS Consent
+[Guide to Collecting SMS Consent via API](https://help.klaviyo.com/hc/en-us/articles/360054803711)
+
+``` python
+import requests
+import json
+data = {
+   "api_key": "pk_**********************************",
+   "profiles": [
+       {
+           "phone_number": "+1**********",
+           "sms_consent": True
+       }
+   ]
+}
+headers = {
+   "Content-Type": "application/json",
+   "Cache-Control": "no-cache"
+   }
+conv = json.dumps(data)
+response = requests.request("POST", "https://a.klaviyo.com/api/v2/list/******/subscribe", data=conv, headers=headers)
+print(response.text)
+```
+
+![1](https://user-images.githubusercontent.com/48727972/191102212-56e6a432-caae-49f1-99f5-f3297446d980.jpg)
+
+![consent2](https://user-images.githubusercontent.com/48727972/191102720-7037d7e6-1d57-4166-bb46-3471eaabd1c3.jpg)
+
+
+
+
