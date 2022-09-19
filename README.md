@@ -233,3 +233,12 @@ I went back to my Flow to understand why my keyboard would not be recognized and
 I finally got the SMS to work, but the conditional was sending the opposite SMS... 
 * ![Screenshot_20220919-151025_Messages](https://user-images.githubusercontent.com/48727972/191128922-2959d9fc-86ca-4b2a-b681-55daaeeeec9a.jpg)
 
+#### 8.8 Updating the Flow? Still not working
+
+* ![conditional](https://user-images.githubusercontent.com/48727972/191130604-084fcd1b-fa06-449e-99fa-3b2170ba518c.png)
+
+#### 8.9 I flipped the Conditional and it just worked?
+
+* ![split](https://user-images.githubusercontent.com/48727972/191132482-4d28243c-d6c6-43cc-8ff3-80e38f708d4f.png)
+* ![20220919_154757](https://user-images.githubusercontent.com/48727972/191132895-a61118d7-6736-402d-95ca-5493a90cafd6.jpg)
+
