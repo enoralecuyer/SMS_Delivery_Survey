@@ -206,6 +206,12 @@ You can access your full SMS Conversation directly from your Klaviyo Dashboard.
 
 So that users can receive several SMS in a row, at all hours of the day. 
 
-But, then, the second conditional of my Flow would be sent automatically even before I had time to send my rating:
+* But, then, the second conditional of my Flow would be sent automatically even before I had time to send my rating:
 ![Screenshot_20220919-143954_Messages](https://user-images.githubusercontent.com/48727972/191125053-a52c8287-f249-47d3-a53e-036b690753a9.jpg)
+
+* So I added a delay of 1 minutes to give time to users to type their rating
+* ![delay1](https://user-images.githubusercontent.com/48727972/191125538-9a65a3b0-8c51-49f3-95df-32f3cd59e17d.png)
+
+
+
 
