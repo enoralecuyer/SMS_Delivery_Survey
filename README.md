@@ -205,3 +205,7 @@ You can access your full SMS Conversation directly from your Klaviyo Dashboard.
 #### 8.4 Removed Smart Sending and Quiet Hours
 
 So that users can receive several SMS in a row, at all hours of the day. 
+
+But, then, the second conditional of my Flow would be sent automatically even before I had time to send my rating:
+![Screenshot_20220919-143954_Messages](https://user-images.githubusercontent.com/48727972/191125053-a52c8287-f249-47d3-a53e-036b690753a9.jpg)
+
