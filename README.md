@@ -217,5 +217,12 @@ So that users can receive several SMS in a row, at all hours of the day.
 * ![Screenshot_20220919-145057_Messages](https://user-images.githubusercontent.com/48727972/191126392-1b5a6df6-35ba-488a-99d7-76ae5064fb21.jpg)
 
 * I went back to my Flow to understand why my keyboard would not be recognized and had a lightbulb moment: I created my conditional split with AND instead of OR. At the moment, only users who would text back 1234 would receive the survey, instead of users who would text back 1, 2, 3, or 4!!
-* ![or](https://user-images.githubusercontent.com/48727972/191127074-bf564dd1-892e-46ef-82d3-523ceddd445c.png)
+ 
+* I updated the settings of the "MESSAGE NOT RECEIVED" to be only sent to users who have not consented SMS, instead of for every user who types a keyword not recognized (not the ideal default setting). 
+  * Before:
+    * ![not received](https://user-images.githubusercontent.com/48727972/191128202-4536b321-845a-4b0c-bba3-6340bd224f93.png)
+  * After:
+    * ![update2](https://user-images.githubusercontent.com/48727972/191128265-87690490-49dc-4979-8247-829b42e3948a.png)
+
+
 
