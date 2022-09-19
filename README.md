@@ -46,7 +46,7 @@ The goal of this Flow is to receive feedback on the delivery experience once a u
     *  "Select a condition" > "What someone has done (or not done)" > "Choose Metric" > "Sent SMS".
   *  Then, add a Property to the Conditional Split:
      *  Funnel icon > "Choose property" > "Message Body" > "equals" > "1" > "at least once" > "since starting this flow".
-  *  Repeat by clicking on the operator "AND" so that the "Message Body" equals 2, 3, and 4.
+  *  Repeat by clicking on the operator "OR" so that the "Message Body" equals 2, 3, and 4.
    * ![and](https://user-images.githubusercontent.com/48727972/189691600-6b66160b-2c66-4b9d-bdfc-1cd7d26b6017.png)
 
 * Now that the Conditional Split is set up, we have two branches, Yes and No, which correspond to Conditional Split is True, or Conditional Split is False.
@@ -212,6 +212,10 @@ So that users can receive several SMS in a row, at all hours of the day.
 * So I added a delay of 1 minutes to give time to users to type their rating
 * ![delay1](https://user-images.githubusercontent.com/48727972/191125538-9a65a3b0-8c51-49f3-95df-32f3cd59e17d.png)
 
+* I was still receiving the message "MESSAGE NOT RECEIVED" when answering the survey
+   * Based on the SMS Settings, this error message would be teiggered "When no keyword is recognized"
+* ![Screenshot_20220919-145057_Messages](https://user-images.githubusercontent.com/48727972/191126392-1b5a6df6-35ba-488a-99d7-76ae5064fb21.jpg)
 
-
+* I went back to my Flow to understand why my keyboard would not be recognized and had a lightbulb moment: I created my conditional split with AND instead of OR. At the moment, only users who would text back 1234 would receive the survey, instead of users who would text back 1, 2, 3, or 4!!
+* ![or](https://user-images.githubusercontent.com/48727972/191127074-bf564dd1-892e-46ef-82d3-523ceddd445c.png)
 
