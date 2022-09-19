@@ -212,17 +212,24 @@ So that users can receive several SMS in a row, at all hours of the day.
 * So I added a delay of 1 minutes to give time to users to type their rating
 * ![delay1](https://user-images.githubusercontent.com/48727972/191125538-9a65a3b0-8c51-49f3-95df-32f3cd59e17d.png)
 
+#### 8.5 AND, OR
+
+I went back to my Flow to understand why my keyboard would not be recognized and had a lightbulb moment: I created my conditional split with AND instead of OR. At the moment, only users who would text back 1234 would receive the survey, instead of users who would text back 1, 2, 3, or 4!!
+ 
+#### 8.6 "MESSAGE NOT RECEIVED" error message
+
 * I was still receiving the message "MESSAGE NOT RECEIVED" when answering the survey
    * Based on the SMS Settings, this error message would be teiggered "When no keyword is recognized"
 * ![Screenshot_20220919-145057_Messages](https://user-images.githubusercontent.com/48727972/191126392-1b5a6df6-35ba-488a-99d7-76ae5064fb21.jpg)
 
-* I went back to my Flow to understand why my keyboard would not be recognized and had a lightbulb moment: I created my conditional split with AND instead of OR. At the moment, only users who would text back 1234 would receive the survey, instead of users who would text back 1, 2, 3, or 4!!
- 
 * I updated the settings of the "MESSAGE NOT RECEIVED" to be only sent to users who have not consented SMS, instead of for every user who types a keyword not recognized (not the ideal default setting). 
   * Before:
     * ![not received](https://user-images.githubusercontent.com/48727972/191128202-4536b321-845a-4b0c-bba3-6340bd224f93.png)
   * After:
     * ![update2](https://user-images.githubusercontent.com/48727972/191128265-87690490-49dc-4979-8247-829b42e3948a.png)
 
+#### 8.7 Reversed flow?
 
+I finally got the SMS to work, but the conditional was sending the opposite SMS... 
+* ![Screenshot_20220919-151025_Messages](https://user-images.githubusercontent.com/48727972/191128922-2959d9fc-86ca-4b2a-b681-55daaeeeec9a.jpg)
 
