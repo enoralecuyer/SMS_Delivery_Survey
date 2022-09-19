@@ -242,4 +242,4 @@ I finally got the SMS to work, but the conditional was sending the opposite SMS.
 * ![split](https://user-images.githubusercontent.com/48727972/191132482-4d28243c-d6c6-43cc-8ff3-80e38f708d4f.png)
 * ![20220919_154757](https://user-images.githubusercontent.com/48727972/191132895-a61118d7-6736-402d-95ca-5493a90cafd6.jpg)
 
-### How to collect the survey? 
+### 9. How to collect the survey? 
