@@ -195,5 +195,10 @@ sendToKlaviyo()
 ![12](https://user-images.githubusercontent.com/48727972/191106817-2b6d5ef3-0a1a-4acd-bdf9-1dbdf558a4da.png)
 
 
+#### 8.3 SMS Conversation
+
+You can access your full SMS Conversation directly from your Klaviyo Dashboard
+![sms conversation](https://user-images.githubusercontent.com/48727972/191107703-74a5d719-d518-41fb-8a6d-afbfb1ca5166.jpg)
+
 
 
