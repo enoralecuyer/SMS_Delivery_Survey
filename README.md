@@ -197,7 +197,9 @@ sendToKlaviyo()
 
 #### 8.3 SMS Conversation
 
-You can access your full SMS Conversation directly from your Klaviyo Dashboard
+You can access your full SMS Conversation directly from your Klaviyo Dashboard.
+[Guide to SMS conversations](https://help.klaviyo.com/hc/en-us/articles/360059002271-Guide-to-SMS-conversations-)
+
 ![sms conversation](https://user-images.githubusercontent.com/48727972/191107703-74a5d719-d518-41fb-8a6d-afbfb1ca5166.jpg)
 
 
