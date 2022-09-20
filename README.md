@@ -184,24 +184,24 @@ Alternatively, you can also check directly from your Flow Analytics to confirm t
    * Based on the SMS Settings, this error message is triggered when "no keyword is recognized"
 * ![Screenshot_20220919-145057_Messages](https://user-images.githubusercontent.com/48727972/191126392-1b5a6df6-35ba-488a-99d7-76ae5064fb21.jpg)
 
-* I updated the settings of the "MESSAGE NOT RECEIVED" to only be sent to users who have not consented to SMS, instead of sending it to every users who type a keyword that not recognized (not the ideal default setting). 
+* I updated the settings of the "MESSAGE NOT RECEIVED" to only be sent to users who have not consented to SMS, instead of sending it to every users who type a keyword that was not recognized (not the ideal default setting). 
   * Before:
     * ![not received](https://user-images.githubusercontent.com/48727972/191128202-4536b321-845a-4b0c-bba3-6340bd224f93.png)
   * After:
     * ![update2](https://user-images.githubusercontent.com/48727972/191128265-87690490-49dc-4979-8247-829b42e3948a.png)
 
-#### 8.51 Certain ratings (1-4) would not be recognized in my Flow
+#### 8.5 Certain ratings (1-4) would not be recognized in my Flow
 * I went back to my Flow to understand why some numbers (1-4) would not be recognized and I had a lightbulb moment: I created my conditional split with AND instead of OR. 
    * At that moment, only users who would text back 1234 would receive the survey, instead of users who would text back 1, 2, 3, or 4!!
 
-#### 8.52 Keyword Management
+#### 8.6 Keyword Management
 * I tried to add some Compliance Keywords but realized that we couldn't add more of them, only update the existing ones. The Compliance Keyword "YES" was already taken, and I couldn't add numbers, so this was a dead end. 
 
-#### 8.6 Testing different Flows
+#### 8.7 Testing different Flows
 * ![conditional](https://user-images.githubusercontent.com/48727972/191130604-084fcd1b-fa06-449e-99fa-3b2170ba518c.png)
 * ![split](https://user-images.githubusercontent.com/48727972/191132482-4d28243c-d6c6-43cc-8ff3-80e38f708d4f.png)
 
-#### 8.7 404 Error on certain help center articles
+#### 8.8 404 Error on certain help center articles
 * I tried to access the "Guide to SMS conversations in Klaviyo" from the article ["How to block, archive, or mark SMS conversations as unread"](https://help.klaviyo.com/hc/en-us/articles/4405329314331) but the link is broken. I did a manual search and was able to access the article. 
    * ![404](https://user-images.githubusercontent.com/48727972/191360105-22a8badb-5539-49d6-9bc9-bec269864f47.png)
 
