@@ -163,10 +163,10 @@ Alternatively, you can also check directly from your Flow Analytics to confirm t
     * I created a free UK number and assigned it to a dummy user. I confirmed that the Flow was successfully triggered and that the first SMS was sent to the user, with a "waiting" status: the free UK number is limited and doesn't offer the option to reply to the SMS or consent to Klaviyo SMS. 
     * I duplicated my Flow so that the survey would be sent via email instead of SMS. I was not able to find a way to listen to the reply of the user (e.g. Sent Email), the way I previously did with my initial Flow (e.g. Sent SMS). 
 
-#### 8.2 Unable to receive SMS past my first test. 
+#### 8.2 Unable to receive any SMS past my first test. 
 * I realized that I had to remove Smart Sending and Quiet Hours o that users could receive several SMS in a row, at all hours of the day, which allowed me to continue my testing. 
 
-#### 8.3 SMS #2 and #2 are sent in a row, without giving me time to give a rating!
+#### 8.3 SMS #2 and #3 are sent in a row, without giving the user time to give a rating!
 * The second conditional of my Flow would be sent automatically even before I had time to send my rating:
    * ![Screenshot_20220919-143954_Messages](https://user-images.githubusercontent.com/48727972/191125053-a52c8287-f249-47d3-a53e-036b690753a9.jpg)
 
@@ -184,9 +184,12 @@ Alternatively, you can also check directly from your Flow Analytics to confirm t
   * After:
     * ![update2](https://user-images.githubusercontent.com/48727972/191128265-87690490-49dc-4979-8247-829b42e3948a.png)
 
-#### 8.5 Certain ratings (1-4) would not be recognized in my Flow
+#### 8.51 Certain ratings (1-4) would not be recognized in my Flow
 * I went back to my Flow to understand why some numbers (1-4) would not be recognized and I had a lightbulb moment: I created my conditional split with AND instead of OR. 
    * At that moment, only users who would text back 1234 would receive the survey, instead of users who would text back 1, 2, 3, or 4!!
+
+#### 8.52 Keyword Management
+* I tried to add some Compliance Keywords but realized that we couldn't add more of them, only update the existing ones. The Compliance Keyword "YES" was already taken, and I couldn't add numbers, so this was a dead end. 
 
 #### 8.6 Testing different Flows
 * ![conditional](https://user-images.githubusercontent.com/48727972/191130604-084fcd1b-fa06-449e-99fa-3b2170ba518c.png)
@@ -215,9 +218,15 @@ Alternatively, you can also check directly from your Flow Analytics to confirm t
 * I tried to access the "Guide to SMS conversations in Klaviyo" from the article ["How to block, archive, or mark SMS conversations as unread"](https://help.klaviyo.com/hc/en-us/articles/4405329314331) but the link is broken. I did a manual search and was able to access the article. 
    * ![404](https://user-images.githubusercontent.com/48727972/191360105-22a8badb-5539-49d6-9bc9-bec269864f47.png)
 
-### 9. Lessons
+### 9. Lessons and Food for Thoughts
 
-#### 9.1
+#### 9.1 Lessons
+
+I learned so much from this project!!
+* I collaborated with Ingrid to understand how to trigger the SMS consent, how to define a condional split based on the body of the SMS, how to think in terms of metrics and not of lists to create dynamic processes!
+* I learned how to use the Klaviyo API and Python to create new users, add new properties, trigger an event or an SMS...
+* I learned to think strategically about the goal of my project, the architecture of my Flow, and the logical steps to get the user the exact answer they need
+* I explored Klaviyo's Dashboard and Documentation quite thoroughly! 
 
 #### 9.2 What are some questions I wish I could have answered with this Project? 
 * Which **products** have on average the lowest or highest delivery experience rate? Why?
