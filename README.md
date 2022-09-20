@@ -53,18 +53,67 @@ The goal of this Flow is to receive feedback on the delivery experience once a u
 * Now that the Conditional Split is set up, we have two branches, Yes and No, which correspond to Conditional Split is True, or Conditional Split is False.
   * Set up an SMS under "YES" so that a follow up survey is sent to the user.
   * Set up an SMS under "NO" so that a thank you message is sent to the user.
+  
+* Create the property Satisfied_With_Delivery (takes the values YES or NO) and add it to both branches of the Flow. Based on the rating of the delivery experience, the user will gain the property Satisfied_With_Delivery withe a value of NO or YES.
+     * For more information: [Profile properties reference](https://help.klaviyo.com/hc/en-us/articles/115005074627-Profile-properties-reference)
+  * ![no](https://user-images.githubusercontent.com/48727972/191355392-afcb063b-c6ad-4ca2-a7e8-9cef4fa938fd.png)
+
+ * Create two Segments based on the "Satisfied_With_Delivery" property to automatically categorize users based on their delivery experience. 
+    * For more information: [Getting started with segments](https://help.klaviyo.com/hc/en-us/articles/115005237908-Getting-started-with-segments)
+    * ![list1](https://user-images.githubusercontent.com/48727972/191354972-17bc0faa-d8ca-4392-a4b5-a024d41e96e9.png)
 
 #### 5.3 Analyze your Flow
 * Click on "Show Analytics" from the top header.
 * For more information: [Understanding flow analytics.](https://help.klaviyo.com/hc/en-us/articles/115002779351-Understanding-flow-analytics)
   * ![Flow](https://user-images.githubusercontent.com/48727972/189538053-99ad77a8-bb80-481f-88fe-8b2d1d62f91b.png)
 
-### 6. Test your Flow with Klaviyo API
+### 6. Secure SMS Consent from your users
+
+#### 6.1 Send a SMS to your users and ask for their SMS consent
+
+* To automatically send a SMS to your users and ask for their SMS consent, we are going to create a script in Python and use the Klaviyo API. 
+  * No need to create a new website, simply open your favorite web-based IDE (integrated development environment). For this project, I used [Replit](https://replit.com/).
+  * Open [Replit.](https://replit.com/)
+  * Click "Create" and choose Python as your language.
+  * Copy/paste the script below and replace the private with your own Public and Private Keys (see Step #3) as well of the ID of your List. 
+  * Click on the Run button to run your script. You will see a light brown arrow under "Console" if your script was successfully launched. 
+       * [Guide to Collecting SMS Consent via API](https://help.klaviyo.com/hc/en-us/articles/360054803711)
+       * [How to find a list ID](https://help.klaviyo.com/hc/en-us/articles/115005078647-How-to-Find-a-List-ID)
+
+``` python
+import requests
+import json
+data = {
+   "api_key": "pk_**********************************",
+   "profiles": [
+       {
+           "phone_number": "+1**********",
+           "sms_consent": True
+       }
+   ]
+}
+headers = {
+   "Content-Type": "application/json",
+   "Cache-Control": "no-cache"
+   }
+conv = json.dumps(data)
+response = requests.request("POST", "https://a.klaviyo.com/api/v2/list/******/subscribe", data=conv, headers=headers)
+print(response.text)
+```
+#### 6.2 Consent to SMS
+
+* You will now receive an SMS asking you to consent to receiving SMS from Klaviyo. Type YES.
+   * ![1](https://user-images.githubusercontent.com/48727972/191102212-56e6a432-caae-49f1-99f5-f3297446d980.jpg)
+
+* Check the profile of your test user: you will see the new consent information under their phone number!
+   * ![SMSConsent](https://user-images.githubusercontent.com/48727972/191351409-b197a7e7-4fdb-40b8-87b1-559f427db23b.png)
+
+### 7. Test your Flow with Klaviyo API
 
 To test that your flow is functional, we are going to create a script in Python and use the Klaviyo API. 
 * No need to create a new website, simply open your favorite web-based IDE (integrated development environment). For this project, I used [Replit](https://replit.com/).
 
-#### 6.1 Add a new user and trigger the "Fulfilled Order" Metric
+#### 7.1 Trigger the "Fulfilled Order" Metric
 * Open [Replit.](https://replit.com/)
 * Click "Create" and choose Python as your language.
 * Copy/paste the script below and replace the private and public tokens with your own Public and Private Keys (see Step #3).
@@ -79,41 +128,38 @@ private_token='pk_**********************************'
 def sendToKlaviyo():
   client.Public.track(
     'Fulfilled Order',
-    email='enoratest@gmail.com',
-    customer_properties={
-      "$first_name":"Enora",
-      "phone_number":"+1*********",
-      "$city":"Aliso Viejo, CA",
-    },
+    email='***********@gmail.com',
   )
-
 sendToKlaviyo()
 ```
 
-* Explanation of the script:
-  * We create a new user who has just fulfilled on order.
-  * We add a phone number to the user's profile (customer_properties) to make sure they can receive the SMS from the Flow. 
-* Pro Tips:
-   * Remember that in Klaviyo, a user ID is defined by their email address. Make sure to add a new email address when creating a new user.
-   * If you create a user with a US/CA phone number, make sure that your Toll-free number has already been verified (See Step #4) or that you subscribed to Klaviyo's Paid plan.
-
-#### 6.2  Confirm that the new user was created in Klaviyo and that the Metric "Fulfilled Order" was added to their profile
+#### 7.2  Confirm that the Metric "Fulfilled Order" was added to the user's profile
 * Go back to your Klaviyo dashboard.
 * Click on "Profiles" under "Audience".
 * If the script was run successfully, you will see the new user at the top of the list.
 * Click on their name. Confirm that the metric "Fulfilled Order" is under Metrics. You should see a green (+1) next to this metric. 
   * ![fulfilled](https://user-images.githubusercontent.com/48727972/189691958-cfe25ddd-4b1c-4210-a6a1-ee8dc7b9f72f.png)
 
-#### 6.3 Confirm that the Flow was triggered and that the first SMS was sent!
-* Go back to your Klaviyo dashboard.
+#### 7.3 Confirm that the Fulfilled Order Metric triggered the SMS #1 from our Flow
+
+* Click on your user's name
+* Under "Show All Metrics", you will see the most recent metrics associated with the user. 
+![Screenshot 2022-09-20 at 12-57-45 Editing SMS_Delivery_Survey_README md at main · enoralecuyer_SMS_Delivery_Survey](https://user-images.githubusercontent.com/48727972/191353280-d78621cf-a66f-4a5c-b1c2-130e1d2746b0.jpg)
+
+#### 7.3 Check the status of the SMS #1 from your Flow
+
+Alternatively, you can also check directly from your Flow Analytics to confirm that the SMS #1 was sent or understand the reason why it was not sent
 * Click on "Flows" and open the SMS Delivery Flow.
 * Click on SMS #1 to check the associated analytics.
   * If you see a 1 next to Delivered, the SMS was successfully sent!
   * If you see a 1 next to Skipped or Waiting instead, the SMS was not sent. 
     * For more information: [Most common reason an SMS is not delivered.](https://help.klaviyo.com/hc/en-us/articles/1260805003210-Understanding-the-skipped-reason-for-a-flow-message)
    * ![analytics](https://user-images.githubusercontent.com/48727972/189692527-2e6529d0-56d2-4e6d-ad67-5cfab790e3eb.png)
+   
+#### 7.4 Give your delivery experience a rating and, if applicable, answer the survey
+* ![20220919_154757](https://user-images.githubusercontent.com/48727972/191132895-a61118d7-6736-402d-95ca-5493a90cafd6.jpg)
 
-### 7. Where to go from there? Roadblocks and lessons
+### 9. Where to go from there? Roadblocks and lessons
 
 #### 7.1 US SMS
 * My first roadblock was the impossibility to test the Flow with my phone number, as the Toll-Free number is still pending verification and there is no free option to send SMS to a US phone number.
@@ -145,56 +191,6 @@ sendToKlaviyo()
 * Is their a **time of the year** when users have a lower delivery experience? 
    * Delays? Do businessed need to communicate with their users beforehand if delays are expected (weather, holiday season), to manage expectations? 
 * What else could we learn from these ratings and surveys?
-
-### 8. Breakthrough [draft a/o 9/19/22]
-
-#### 8.1 Getting SMS Consent
-* [Guide to Collecting SMS Consent via API](https://help.klaviyo.com/hc/en-us/articles/360054803711)
-* [How to find a list ID](https://help.klaviyo.com/hc/en-us/articles/115005078647-How-to-Find-a-List-ID)
-
-``` python
-import requests
-import json
-data = {
-   "api_key": "pk_**********************************",
-   "profiles": [
-       {
-           "phone_number": "+1**********",
-           "sms_consent": True
-       }
-   ]
-}
-headers = {
-   "Content-Type": "application/json",
-   "Cache-Control": "no-cache"
-   }
-conv = json.dumps(data)
-response = requests.request("POST", "https://a.klaviyo.com/api/v2/list/******/subscribe", data=conv, headers=headers)
-print(response.text)
-```
-
-* ![1](https://user-images.githubusercontent.com/48727972/191102212-56e6a432-caae-49f1-99f5-f3297446d980.jpg)
-
-* ![consent2](https://user-images.githubusercontent.com/48727972/191102720-7037d7e6-1d57-4166-bb46-3471eaabd1c3.jpg)
-
-#### 8.2 Triggering the Fulfilled Order Metric, which triggered the SMS #1 from our Flow
-
-```
-import klaviyo
-
-client = klaviyo.Klaviyo(public_token='******')
-private_token='pk_**********************************'
-
-def sendToKlaviyo():
-  client.Public.track(
-    'Fulfilled Order',
-    email='***********@gmail.com',
-  )
-sendToKlaviyo()
-```
-
-* ![12](https://user-images.githubusercontent.com/48727972/191106817-2b6d5ef3-0a1a-4acd-bdf9-1dbdf558a4da.png)
-
 
 #### 8.3 SMS Conversation
 
@@ -241,6 +237,5 @@ I finally got the SMS to work, but the conditional was sending the opposite SMS.
 #### 8.9 I flipped the Conditional and it just worked?
 
 * ![split](https://user-images.githubusercontent.com/48727972/191132482-4d28243c-d6c6-43cc-8ff3-80e38f708d4f.png)
-* ![20220919_154757](https://user-images.githubusercontent.com/48727972/191132895-a61118d7-6736-402d-95ca-5493a90cafd6.jpg)
 
 ### 9. How to collect the survey? 
