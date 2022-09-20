@@ -229,8 +229,8 @@ I learned so much from this project!
 * I was very interesting to think of a problem, learn a software and its API for the first time, and find the best tools and processes to create a solution! 
   * Architecture of the data Flow
   * Categorization of users based on their delivery experience
-  * Collection of data based on the users' responses
-  * Automtically adding new properties to users
+  * Collection of data
+  * Automatically adding new properties to the users' profiles
   * Exploring the API documentation
   * Communication: clear and easy to understand messages sent to users
   * Collaboration with the team, specifically Ingrid to understand the software and overcome certain roadblocks
