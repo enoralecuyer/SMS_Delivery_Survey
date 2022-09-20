@@ -195,7 +195,13 @@ Alternatively, you can also check directly from your Flow Analytics to confirm t
 * ![conditional](https://user-images.githubusercontent.com/48727972/191130604-084fcd1b-fa06-449e-99fa-3b2170ba518c.png)
 * ![split](https://user-images.githubusercontent.com/48727972/191132482-4d28243c-d6c6-43cc-8ff3-80e38f708d4f.png)
 
-#### 8.7 Open-ended survey
+#### 8.7 404 Error on certain help center articles
+* I tried to access the "Guide to SMS conversations in Klaviyo" from the article ["How to block, archive, or mark SMS conversations as unread"](https://help.klaviyo.com/hc/en-us/articles/4405329314331) but the link is broken. I did a manual search and was able to access the article. 
+   * ![404](https://user-images.githubusercontent.com/48727972/191360105-22a8badb-5539-49d6-9bc9-bec269864f47.png)
+
+### Improvements
+
+#### 9.1 Improving the open-ended survey
 * My survey asks the user to rate their delivery experience from 1 to 5.
   * Issues:
     * What if the user answers the survey with additional text (e.g "Amazing, 5 stars!")?
@@ -204,32 +210,30 @@ Alternatively, you can also check directly from your Flow Analytics to confirm t
     * Send a link to the survey instead of asking the user to rate directly via SMS.
     * Create an interactive MMS Campaign with buttons for 1-5.
     * Change the requirement from 1-5 to Yes/No.
+    * Send a refund or discount link to users who have rated the delivery experience poorly.
 
-#### 8.8 Lack of data
-* Because I was not able to fully test the Flow, I was not able to collect enough data from the survey.
+#### 9.2 Improving the collection of data
    * How do I want to collect, organize, filter and present the data?
-     * Create a new segment for users who rated the delivery experience.
-     * Create a new segment for users who rated the delivery experience AND completed the survey.
-     * Extract the data from the ratings & surveys with the Klaviyo API and/or CSV export.
-     * How to extract the data from the SMS Conversations?
-     * Send a refund or discount link to users who have rated the delivery experience poorly.
+       * How to extract the data from the SMS Conversations?
+       * How to extract the data from the ratings and surveys? CSV Export?
 
-#### 8.9 404 Error on certain help center articles
-* I tried to access the "Guide to SMS conversations in Klaviyo" from the article ["How to block, archive, or mark SMS conversations as unread"](https://help.klaviyo.com/hc/en-us/articles/4405329314331) but the link is broken. I did a manual search and was able to access the article. 
-   * ![404](https://user-images.githubusercontent.com/48727972/191360105-22a8badb-5539-49d6-9bc9-bec269864f47.png)
-
-### 9. Lessons and Food for Thought
-
-#### 9.1 Lessons
-
-I learned so much from this project!!
-* I collaborated with Ingrid to understand how to trigger the SMS consent, how to define a condional split based on the body of the SMS, how to think in terms of metrics and not of lists to create dynamic processes!
-* I learned how to use the Klaviyo API and Python to create new users, add new properties, trigger an event or an SMS...
-* I learned to think strategically about the goal of my project, the architecture of my Flow, and the logical steps to get the user the exact answer they need
-* I explored Klaviyo's Dashboard and Documentation quite thoroughly! 
-
-#### 9.2 What are some questions I wish I could have answered with this Project? 
+#### 9.3 What are some questions I wish I could have answered with this Project? 
 * Which **products** have on average the lowest or highest delivery experience rate? Why?
 * Which **countries** have on average the lowest or highest delivery experience rate? Why?
 * Is their a **time of the year** when users have a lower delivery experience? 
    * Delays? Do businessed need to communicate with their users beforehand if delays are expected (weather, holiday season), to manage expectations? 
+
+### 10. Lessons
+
+I learned so much from this project!
+* I was very interesting to think of a problem, learn a software and its API for the first time, and find the best tools and processes to create a solution! 
+  * Architecture of the data Flow
+  * Categorization of users based on their delivery experience
+  * Collection of data based on the users' responses
+  * Automtically adding new properties to users
+  * Exploring the API documentation
+  * Communication: clear and easy to understand messages sent to users
+  * Collaboration with the team, specifically Ingrid to understand the software and overcome certain roadblocks
+     * Triggering the SMS Consent
+     * Defining a Conditional Split based on their condition (sent SMS) and properties (body of the message)...
+     * Thinking in terms of Metrics and not Lists to create dynamic processes that can happen multiple times.
