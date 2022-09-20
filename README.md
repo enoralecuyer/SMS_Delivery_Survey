@@ -145,7 +145,7 @@ sendToKlaviyo()
    * Delays? Do businessed need to communicate with their users beforehand if delays are expected (weather, holiday season), to manage expectations? 
 * What else could we learn from these ratings and surveys?
 
-### 8. Breakthrough
+### 8. Breakthrough [draft a/o 9/19/22]
 
 #### 8.1 Getting SMS Consent
 * [Guide to Collecting SMS Consent via API](https://help.klaviyo.com/hc/en-us/articles/360054803711)
