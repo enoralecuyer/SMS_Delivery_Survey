@@ -164,7 +164,7 @@ Alternatively, you can also check directly from your Flow Analytics to confirm t
     * I duplicated my Flow so that the survey would be sent via email instead of SMS. I was not able to find a way to listen to the reply of the user (e.g. Sent Email), the way I previously did with my initial Flow (e.g. Sent SMS). 
 
 #### 8.2 Unable to receive any SMS past my first test. 
-* I realized that I had to remove Smart Sending and Quiet Hours o that users could receive several SMS in a row, at all hours of the day, which allowed me to continue my testing. 
+* I realized that I had to remove Smart Sending and Quiet Hours so that users could receive several SMS in a row, at all hours of the day, which allowed me to continue my testing. 
 
 #### 8.3 SMS #2 and #3 are sent in a row, without giving the user time to give a rating!
 * The second conditional of my Flow would be sent automatically even before I had time to send my rating:
