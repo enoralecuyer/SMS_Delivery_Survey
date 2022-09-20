@@ -237,8 +237,9 @@ I learned so much from this project!
   * Automation of new properties to the users' profiles
   * API documentation
   * Collection of data
+  * Engagement of the user
   * Communication: messages sent to users are clear and easy to understand 
   * Collaboration with the team, specifically Ingrid, to understand the software and overcome certain roadblocks
      * Triggering the SMS Consent
-     * Defining a Conditional Split based on their condition (sent SMS) and properties (body of the message)...
-     * Thinking in terms of Metrics and not Lists to create dynamic processes that can happen multiple times.
+     * Defining a Conditional Split based on their conditions (sent SMS) and properties (body of the message).
+     * Thinking in terms of Metrics and not Lists to dynamically trigger a Flow.
