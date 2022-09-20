@@ -58,19 +58,18 @@ The goal of this Flow is to receive feedback on the delivery experience once a u
      * For more information: [Profile properties reference](https://help.klaviyo.com/hc/en-us/articles/115005074627-Profile-properties-reference)
   * ![no](https://user-images.githubusercontent.com/48727972/191355392-afcb063b-c6ad-4ca2-a7e8-9cef4fa938fd.png)
 
- * Create two Segments based on the "Satisfied_With_Delivery" property to automatically categorize users based on their delivery experience. 
-    * For more information: [Getting started with segments](https://help.klaviyo.com/hc/en-us/articles/115005237908-Getting-started-with-segments)
-    * ![list1](https://user-images.githubusercontent.com/48727972/191354972-17bc0faa-d8ca-4392-a4b5-a024d41e96e9.png)
-
 #### 5.3 Analyze your Flow
 * Click on "Show Analytics" from the top header.
 * For more information: [Understanding flow analytics.](https://help.klaviyo.com/hc/en-us/articles/115002779351-Understanding-flow-analytics)
   * ![Flow](https://user-images.githubusercontent.com/48727972/189538053-99ad77a8-bb80-481f-88fe-8b2d1d62f91b.png)
 
+#### 5.4  Create two Segments based on the "Satisfied_With_Delivery" property
+Create two Segments based on the "Satisfied_With_Delivery" property to automatically categorize users based on their delivery experience. 
+    * For more information: [Getting started with segments](https://help.klaviyo.com/hc/en-us/articles/115005237908-Getting-started-with-segments)
+
 ### 6. Secure SMS Consent from your users
 
 #### 6.1 Send a SMS to your users and ask for their SMS consent
-
 * To automatically send a SMS to your users and ask for their SMS consent, we are going to create a script in Python and use the Klaviyo API. 
   * No need to create a new website, simply open your favorite web-based IDE (integrated development environment). For this project, I used [Replit](https://replit.com/).
   * Open [Replit.](https://replit.com/)
@@ -109,7 +108,6 @@ print(response.text)
    * ![SMSConsent](https://user-images.githubusercontent.com/48727972/191351409-b197a7e7-4fdb-40b8-87b1-559f427db23b.png)
 
 ### 7. Test your Flow with Klaviyo API
-
 To test that your flow is functional, we are going to create a script in Python and use the Klaviyo API. 
 * No need to create a new website, simply open your favorite web-based IDE (integrated development environment). For this project, I used [Replit](https://replit.com/).
 
@@ -141,13 +139,11 @@ sendToKlaviyo()
   * ![fulfilled](https://user-images.githubusercontent.com/48727972/189691958-cfe25ddd-4b1c-4210-a6a1-ee8dc7b9f72f.png)
 
 #### 7.3 Confirm that the Fulfilled Order Metric triggered the SMS #1 from our Flow
-
 * Click on your user's name
 * Under "Show All Metrics", you will see the most recent metrics associated with the user. 
 ![Screenshot 2022-09-20 at 12-57-45 Editing SMS_Delivery_Survey_README md at main · enoralecuyer_SMS_Delivery_Survey](https://user-images.githubusercontent.com/48727972/191353280-d78621cf-a66f-4a5c-b1c2-130e1d2746b0.jpg)
 
 #### 7.3 Check the status of the SMS #1 from your Flow
-
 Alternatively, you can also check directly from your Flow Analytics to confirm that the SMS #1 was sent or understand the reason why it was not sent
 * Click on "Flows" and open the SMS Delivery Flow.
 * Click on SMS #1 to check the associated analytics.
@@ -159,16 +155,44 @@ Alternatively, you can also check directly from your Flow Analytics to confirm t
 #### 7.4 Give your delivery experience a rating and, if applicable, answer the survey
 * ![20220919_154757](https://user-images.githubusercontent.com/48727972/191132895-a61118d7-6736-402d-95ca-5493a90cafd6.jpg)
 
-### 9. Where to go from there? Roadblocks and lessons
+### 8. Roadblocks
 
-#### 7.1 US SMS
-* My first roadblock was the impossibility to test the Flow with my phone number, as the Toll-Free number is still pending verification and there is no free option to send SMS to a US phone number.
+#### 8.1 US SMS
+* My first roadblock was that I was waiting for the US Toll-Free number to be verified, and didn't realize that the reason why I was not receiving SMS was because I hadn't consented to SMS. 
   * Troubleshooting:
     * I created a free UK number and assigned it to a dummy user. I confirmed that the Flow was successfully triggered and that the first SMS was sent to the user, with a "waiting" status: the free UK number is limited and doesn't offer the option to reply to the SMS or consent to Klaviyo SMS. 
-    * I followed [this documentation](https://help.klaviyo.com/hc/en-us/articles/360054803711#setup-requirements1) to implement SMS consent via API, but I was still unable to reply to the SMS. 
     * I duplicated my Flow so that the survey would be sent via email instead of SMS. I was not able to find a way to listen to the reply of the user (e.g. Sent Email), the way I previously did with my initial Flow (e.g. Sent SMS). 
 
-#### 7.2 Open-ended survey
+#### 8.2 Unable to receive SMS past my first test. 
+* I realized that I had to remove Smart Sending and Quiet Hours o that users could receive several SMS in a row, at all hours of the day, which allowed me to continue my testing. 
+
+#### 8.3 SMS #2 and #2 are sent in a row, without giving me time to give a rating!
+* The second conditional of my Flow would be sent automatically even before I had time to send my rating:
+   * ![Screenshot_20220919-143954_Messages](https://user-images.githubusercontent.com/48727972/191125053-a52c8287-f249-47d3-a53e-036b690753a9.jpg)
+
+* So I added a delay of 1 minute to give users some time to type their rating
+  * ![delay1](https://user-images.githubusercontent.com/48727972/191125538-9a65a3b0-8c51-49f3-95df-32f3cd59e17d.png)
+
+#### 8.4 "MESSAGE NOT RECEIVED" error message
+* I was still receiving the message "MESSAGE NOT RECEIVED" when answering the survey.
+   * Based on the SMS Settings, this error message is triggered when "no keyword is recognized"
+* ![Screenshot_20220919-145057_Messages](https://user-images.githubusercontent.com/48727972/191126392-1b5a6df6-35ba-488a-99d7-76ae5064fb21.jpg)
+
+* I updated the settings of the "MESSAGE NOT RECEIVED" to only be sent to users who have not consented to SMS, instead of sending it to every users who type a keyword that not recognized (not the ideal default setting). 
+  * Before:
+    * ![not received](https://user-images.githubusercontent.com/48727972/191128202-4536b321-845a-4b0c-bba3-6340bd224f93.png)
+  * After:
+    * ![update2](https://user-images.githubusercontent.com/48727972/191128265-87690490-49dc-4979-8247-829b42e3948a.png)
+
+#### 8.5 Certain ratings (1-4) would not be recognized in my Flow
+* I went back to my Flow to understand why some numbers (1-4) would not be recognized and I had a lightbulb moment: I created my conditional split with AND instead of OR. 
+   * At that moment, only users who would text back 1234 would receive the survey, instead of users who would text back 1, 2, 3, or 4!!
+
+#### 8.6 Testing different Flows
+* ![conditional](https://user-images.githubusercontent.com/48727972/191130604-084fcd1b-fa06-449e-99fa-3b2170ba518c.png)
+* ![split](https://user-images.githubusercontent.com/48727972/191132482-4d28243c-d6c6-43cc-8ff3-80e38f708d4f.png)
+
+#### 8.7 Open-ended survey
 * My survey asks the user to rate their delivery experience from 1 to 5.
   * Issues:
     * What if the user answers the survey with additional text (e.g "Amazing, 5 stars!")?
@@ -178,64 +202,25 @@ Alternatively, you can also check directly from your Flow Analytics to confirm t
     * Create an interactive SMS Campaign with buttons for 1-5 (coding needed).
     * Create another Conditional Split that informs the user that their answer is invalid if they do not reply with 1-5 (e.g. "invalid answer").
 
-#### 7.3 Lack of data
-* Because I was not able to fully test the Flow, I was not able to collect data from the survey.
-   * Once I get the data, what are the next steps? How do I want to collect, organize, filter and present the data?
+#### 8.8 Lack of data
+* Because I was not able to fully test the Flow, I was not able to collect enough data from the survey.
+   * How do I want to collect, organize, filter and present the data?
      * Create a new segment for users who rated the delivery experience.
      * Create a new segment for users who rated the delivery experience AND completed the survey.
      * Extract the data from the ratings & surveys with the Klaviyo API and/or CSV export.
+     * How to extract the data from the SMS Conversations?
+     * Send a refund or discount link to users who have rated the delivery experience poorly.
 
-#### 7.4 What are some questions I wish I could have answered with this Project? 
+#### 8.9 404 Error on certain help center articles
+* I tried to access the "Guide to SMS conversations in Klaviyo" from the article ["How to block, archive, or mark SMS conversations as unread"](https://help.klaviyo.com/hc/en-us/articles/4405329314331) but the link is broken. I did a manual search and was able to access the article. 
+   * ![404](https://user-images.githubusercontent.com/48727972/191360105-22a8badb-5539-49d6-9bc9-bec269864f47.png)
+
+### 9. Lessons
+
+#### 9.1
+
+#### 9.2 What are some questions I wish I could have answered with this Project? 
 * Which **products** have on average the lowest or highest delivery experience rate? Why?
 * Which **countries** have on average the lowest or highest delivery experience rate? Why?
 * Is their a **time of the year** when users have a lower delivery experience? 
    * Delays? Do businessed need to communicate with their users beforehand if delays are expected (weather, holiday season), to manage expectations? 
-* What else could we learn from these ratings and surveys?
-
-#### 8.3 SMS Conversation
-
-You can access your full SMS Conversation directly from your Klaviyo Dashboard.
-[Guide to SMS conversations](https://help.klaviyo.com/hc/en-us/articles/360059002271-Guide-to-SMS-conversations-)
-
-* ![sms conversation](https://user-images.githubusercontent.com/48727972/191107703-74a5d719-d518-41fb-8a6d-afbfb1ca5166.jpg)
-
-#### 8.4 Removed Smart Sending and Quiet Hours
-
-So that users can receive several SMS in a row, at all hours of the day. 
-
-* But, then, the second conditional of my Flow would be sent automatically even before I had time to send my rating:
-![Screenshot_20220919-143954_Messages](https://user-images.githubusercontent.com/48727972/191125053-a52c8287-f249-47d3-a53e-036b690753a9.jpg)
-
-* So I added a delay of 1 minute to give time to users to type their rating
-* ![delay1](https://user-images.githubusercontent.com/48727972/191125538-9a65a3b0-8c51-49f3-95df-32f3cd59e17d.png)
-
-#### 8.5 AND, OR
-
-I went back to my Flow to understand why my keyword would not be recognized and I had a lightbulb moment: I created my conditional split with AND instead of OR. At the moment, only users who would text back 1234 would receive the survey, instead of users who would text back 1, 2, 3, or 4!!
- 
-#### 8.6 "MESSAGE NOT RECEIVED" error message
-
-* I was still receiving the message "MESSAGE NOT RECEIVED" when answering the survey
-   * Based on the SMS Settings, this error message would be triggered "when no keyword is recognized"
-* ![Screenshot_20220919-145057_Messages](https://user-images.githubusercontent.com/48727972/191126392-1b5a6df6-35ba-488a-99d7-76ae5064fb21.jpg)
-
-* I updated the settings of the "MESSAGE NOT RECEIVED" to be only sent to users who have not consented to SMS, instead of to every users who type a keyword not recognized (not the ideal default setting). 
-  * Before:
-    * ![not received](https://user-images.githubusercontent.com/48727972/191128202-4536b321-845a-4b0c-bba3-6340bd224f93.png)
-  * After:
-    * ![update2](https://user-images.githubusercontent.com/48727972/191128265-87690490-49dc-4979-8247-829b42e3948a.png)
-
-#### 8.7 Reversed flow?
-
-I finally got the SMS to work, but the conditional was sending the opposite SMS... 
-* ![Screenshot_20220919-151025_Messages](https://user-images.githubusercontent.com/48727972/191128922-2959d9fc-86ca-4b2a-b681-55daaeeeec9a.jpg)
-
-#### 8.8 Updating the Flow? Still not working
-
-* ![conditional](https://user-images.githubusercontent.com/48727972/191130604-084fcd1b-fa06-449e-99fa-3b2170ba518c.png)
-
-#### 8.9 I flipped the Conditional and it just worked?
-
-* ![split](https://user-images.githubusercontent.com/48727972/191132482-4d28243c-d6c6-43cc-8ff3-80e38f708d4f.png)
-
-### 9. How to collect the survey? 
