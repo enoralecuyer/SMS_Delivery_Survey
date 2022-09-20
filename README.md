@@ -209,20 +209,20 @@ So that users can receive several SMS in a row, at all hours of the day.
 * But, then, the second conditional of my Flow would be sent automatically even before I had time to send my rating:
 ![Screenshot_20220919-143954_Messages](https://user-images.githubusercontent.com/48727972/191125053-a52c8287-f249-47d3-a53e-036b690753a9.jpg)
 
-* So I added a delay of 1 minutes to give time to users to type their rating
+* So I added a delay of 1 minute to give time to users to type their rating
 * ![delay1](https://user-images.githubusercontent.com/48727972/191125538-9a65a3b0-8c51-49f3-95df-32f3cd59e17d.png)
 
 #### 8.5 AND, OR
 
-I went back to my Flow to understand why my keyboard would not be recognized and had a lightbulb moment: I created my conditional split with AND instead of OR. At the moment, only users who would text back 1234 would receive the survey, instead of users who would text back 1, 2, 3, or 4!!
+I went back to my Flow to understand why my keyword would not be recognized and I had a lightbulb moment: I created my conditional split with AND instead of OR. At the moment, only users who would text back 1234 would receive the survey, instead of users who would text back 1, 2, 3, or 4!!
  
 #### 8.6 "MESSAGE NOT RECEIVED" error message
 
 * I was still receiving the message "MESSAGE NOT RECEIVED" when answering the survey
-   * Based on the SMS Settings, this error message would be teiggered "When no keyword is recognized"
+   * Based on the SMS Settings, this error message would be triggered "when no keyword is recognized"
 * ![Screenshot_20220919-145057_Messages](https://user-images.githubusercontent.com/48727972/191126392-1b5a6df6-35ba-488a-99d7-76ae5064fb21.jpg)
 
-* I updated the settings of the "MESSAGE NOT RECEIVED" to be only sent to users who have not consented SMS, instead of for every user who types a keyword not recognized (not the ideal default setting). 
+* I updated the settings of the "MESSAGE NOT RECEIVED" to be only sent to users who have not consented to SMS, instead of to every users who type a keyword not recognized (not the ideal default setting). 
   * Before:
     * ![not received](https://user-images.githubusercontent.com/48727972/191128202-4536b321-845a-4b0c-bba3-6340bd224f93.png)
   * After:
