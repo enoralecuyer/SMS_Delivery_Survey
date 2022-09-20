@@ -218,7 +218,7 @@ Alternatively, you can also check directly from your Flow Analytics to confirm t
 * I tried to access the "Guide to SMS conversations in Klaviyo" from the article ["How to block, archive, or mark SMS conversations as unread"](https://help.klaviyo.com/hc/en-us/articles/4405329314331) but the link is broken. I did a manual search and was able to access the article. 
    * ![404](https://user-images.githubusercontent.com/48727972/191360105-22a8badb-5539-49d6-9bc9-bec269864f47.png)
 
-### 9. Lessons and Food for Thoughts
+### 9. Lessons and Food for Thought
 
 #### 9.1 Lessons
 
