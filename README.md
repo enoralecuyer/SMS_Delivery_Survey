@@ -231,7 +231,7 @@ Alternatively, you can also check directly from your Flow Analytics to confirm t
 ### 10. Lessons
 
 I learned so much from this project!
-* I was very interesting to think of a problem, learn a software and its API for the first time, and find the best tools and processes to create a solution! 
+* It was very interesting to think of a problem, learn a software and its API for the first time, and find the best tools and processes to create a solution! 
   * Architecture of the data Flow
   * Categorization of users based on their delivery experience
   * Automation of new properties to the users' profiles
