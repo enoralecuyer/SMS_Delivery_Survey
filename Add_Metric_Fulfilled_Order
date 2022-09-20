@@ -1,0 +1,11 @@
+import klaviyo
+
+client = klaviyo.Klaviyo(public_token='PUBLIC_KEY')
+private_token='PRIVATE_KEY'
+
+def sendToKlaviyo():
+  client.Public.track(
+    'Fulfilled Order',
+    email='EMAIL',
+  )
+sendToKlaviyo()
