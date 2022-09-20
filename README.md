@@ -215,8 +215,7 @@ Alternatively, you can also check directly from your Flow Analytics to confirm t
   * Possible solutions:
     * Send a link to the survey instead of asking the user to rate directly via SMS.
     * Create an interactive MMS Campaign with buttons for 1-5.
-    * Change the requirement from 1-5 to Yes/No.
-    * Send a refund or discount link to users who have rated the delivery experience poorly.
+    * Send a Klaviyo Signup Form (currently unable to install the Code Snippet)
 
 #### 9.2 Improving the collection of data
    * How do I want to collect, organize, filter and present the data?
