@@ -155,6 +155,12 @@ Alternatively, you can also check directly from your Flow Analytics to confirm t
 #### 7.4 Give your delivery experience a rating and, if applicable, answer the survey
 * ![20220919_154757](https://user-images.githubusercontent.com/48727972/191132895-a61118d7-6736-402d-95ca-5493a90cafd6.jpg)
 
+#### 7.5 Keep your users engage!
+
+* Send a refund or discount link if they had a negative delivery experience. 
+* Send a gift for answering the survey.
+* Send the new season's products...
+
 ### 8. Roadblocks
 
 #### 8.1 US SMS
