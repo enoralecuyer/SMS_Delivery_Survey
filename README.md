@@ -202,8 +202,8 @@ Alternatively, you can also check directly from your Flow Analytics to confirm t
     * What if the user answers by spelling the rating instead of using a numerical value (e.g "four")?
   * Possible solutions:
     * Send a link to the survey instead of asking the user to rate directly via SMS.
-    * Create an interactive SMS Campaign with buttons for 1-5 (coding needed).
-    * Create another Conditional Split that informs the user that their answer is invalid if they do not reply with 1-5 (e.g. "invalid answer").
+    * Create an interactive MMS Campaign with buttons for 1-5.
+    * Change the requirement from 1-5 to Yes/No.
 
 #### 8.8 Lack of data
 * Because I was not able to fully test the Flow, I was not able to collect enough data from the survey.
