@@ -1,10 +1,10 @@
 import requests
 import json
 data = {
-   "api_key": "PRIVATE_KEY",
+   "api_key": "PRIVATE_API_KEY",
    "profiles": [
        {
-           "phone_number": "PHONE NUMBER WITH COUNTRY CODE",
+           "phone_number": "PHONE_NUMBER",
            "sms_consent": True
        }
    ]
@@ -14,5 +14,5 @@ headers = {
    "Cache-Control": "no-cache"
    }
 conv = json.dumps(data)
-response = requests.request("POST", "https://a.klaviyo.com/api/v2/list/LIST_CODE/subscribe", data=conv, headers=headers)
+response = requests.request("POST", "https://a.klaviyo.com/api/v2/list/LIST_ID/subscribe", data=conv, headers=headers)
 print(response.text)
